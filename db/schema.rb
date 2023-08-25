@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_25_180224) do
+ActiveRecord::Schema.define(version: 2023_08_25_195755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 2023_08_25_180224) do
     t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable_type_and_addressable_id"
   end
 
+  create_table "chinese_foods", force: :cascade do |t|
+    t.bigint "shop_id"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_chinese_foods_on_shop_id"
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -43,6 +51,22 @@ ActiveRecord::Schema.define(version: 2023_08_25_180224) do
     t.integer "price"
     t.string "type"
     t.index ["shop_id"], name: "index_foods_on_shop_id"
+  end
+
+  create_table "italian_foods", force: :cascade do |t|
+    t.bigint "shop_id"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_italian_foods_on_shop_id"
+  end
+
+  create_table "japanese_foods", force: :cascade do |t|
+    t.bigint "shop_id"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_japanese_foods_on_shop_id"
   end
 
   create_table "order_foods", force: :cascade do |t|
@@ -69,7 +93,10 @@ ActiveRecord::Schema.define(version: 2023_08_25_180224) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "chinese_foods", "shops"
   add_foreign_key "foods", "shops"
+  add_foreign_key "italian_foods", "shops"
+  add_foreign_key "japanese_foods", "shops"
   add_foreign_key "order_foods", "foods"
   add_foreign_key "order_foods", "orders"
   add_foreign_key "orders", "customers"
