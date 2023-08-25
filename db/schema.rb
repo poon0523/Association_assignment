@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(version: 2023_08_25_195755) do
 
   create_table "order_foods", force: :cascade do |t|
     t.bigint "food_id"
+    t.bigint "japanese_food_id"
+    t.bigint "italian_food_id"
+    t.bigint "chinese_food_id"
     t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
