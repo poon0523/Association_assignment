@@ -1,0 +1,12 @@
+=> [32m#<Address:0x00005594a0c88fb8[0m
+ id: [1;36mnil[0m,
+ line_1: [1;36mnil[0m,
+ line_2: [1;36mnil[0m,
+ line_3: [1;36mnil[0m,
+ city: [1;36mnil[0m,
+ prefecture: [31m[1;31m"[0m[31m東京都[1;31m"[0m[31m[0m,
+ postalcode: [1;36mnil[0m,
+ addressable_type: [1;36mnil[0m,
+ addressable_id: [1;36mnil[0m,
+ created_at: [1;36mnil[0m,
+ updated_at: [1;36mnil[0m[32m>[0m
